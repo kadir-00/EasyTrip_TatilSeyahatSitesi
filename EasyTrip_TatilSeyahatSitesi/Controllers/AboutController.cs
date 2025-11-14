@@ -7,24 +7,14 @@ using EasyTrip_TatilSeyahatSitesi.Models.Siniflar;
 
 namespace EasyTrip_TatilSeyahatSitesi.Controllers
 {
-    public class DefaultController : Controller
+    public class AboutController : Controller
     {
+        // GET: About
         Context c = new Context();
-        // GET: Default
         public ActionResult Index()
         {
-            var degerler = c.Blogs.ToList();
+            var degerler = c.Hakkimizdas.ToList();
             return View(degerler);
-        }
-
-        public ActionResult About()
-        {
-            return View();
-        }
-
-        public PartialViewResult Partial1()
-        { 
-        return PartialView();
         }
     }
 }

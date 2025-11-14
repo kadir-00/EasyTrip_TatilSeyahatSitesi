@@ -14,7 +14,6 @@ namespace EasyTrip_TatilSeyahatSitesi.Models.Siniflar
       public DbSet<Blog> Blogs { get; set; }
       public DbSet<Hakkimizda> Hakkimizdas { get; set; }
       public DbSet<Iletisim> Iletisims { get; set; }
-      
-        
+      public DbSet<Yorumlar> Yorumlars { get; set; }
     }
 }
