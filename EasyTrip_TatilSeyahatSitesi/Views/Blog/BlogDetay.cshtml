@@ -66,16 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </li>
                 </ul>
                 }
-                <div class="content-form">
-                    <h3>Yorum Ekleyin</h3>
-                    <form>
-                        <input type="text" placeholder="Kullanici Adi" required />
-                        <input type="text" placeholder="Mail Adresi" required />
-                        <input type="text" placeholder="Telefon Numarasi" required />
-                        <textarea placeholder="Mesajiniz"></textarea>
-                        <input type="submit" value="GONDER" />
-                    </form>
-                </div>
+                @Html.Action("YorumYap","Blog")
             </div>
 
             <div class="col-md-4 side-content">
