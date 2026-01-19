@@ -1,0 +1,17 @@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="contact-info">
+            <h2 style="color: #333; font-weight: bold; font-size: 36px; margin-bottom: 30px;">&#304;leti&#351;im</h2>
+            <div class="contact-grids">
+                @Html.Partial("PartialContactForm")
+                @Html.Partial("PartialContactInfo")
+                <div class="clear" style="clear: both;"></div>
+            </div>
+        </div>
+    </div>
+</div>

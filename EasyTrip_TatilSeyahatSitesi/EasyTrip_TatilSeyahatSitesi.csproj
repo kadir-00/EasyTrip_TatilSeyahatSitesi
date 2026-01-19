@@ -130,6 +130,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\GirisYapController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -260,6 +261,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\PartialContactForm.cshtml" />
+    <Content Include="Views\Contact\PartialContactInfo.cshtml" />
+    <Content Include="Views\Contact\PartialContactMap.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
