@@ -4,14 +4,14 @@
         g&#246;r&#252;&#351; ve &#246;nerileriniz i&#231;in bize a&#351;a&#287;&#305;daki ileti&#351;im
         kanallar&#305;ndan ula&#351;abilirsiniz.</p>
     <div class="contact-details">
-        <form>
-            <input type="text" placeholder="Ad&#305;n&#305;z" required
+        <form method="post" action="/Contact/Gonder">
+            <input type="text" name="AdSoyad" placeholder="Ad&#305;n&#305;z" required
                 style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #333;" />
-            <input type="text" placeholder="Email Adresiniz" required
+            <input type="text" name="Mail" placeholder="Email Adresiniz" required
                 style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #333;" />
-            <input type="text" placeholder="Konu" required
+            <input type="text" name="Konu" placeholder="Konu" required
                 style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #333;" />
-            <textarea placeholder="Mesaj&#305;n&#305;z" required
+            <textarea name="Mesaj" placeholder="Mesaj&#305;n&#305;z" required
                 style="width: 100%; height: 150px; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #333; resize: vertical;"></textarea>
             <input type="submit" value="G&#214;NDER"
                 style="background-color: #a2365a; color: white; padding: 15px 40px; border: none; border-radius: 5px; font-size: 18px; font-weight: bold; cursor: pointer; transition: background 0.3s;"

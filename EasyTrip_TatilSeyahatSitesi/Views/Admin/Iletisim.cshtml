@@ -1,0 +1,40 @@
+@using EasyTrip_TatilSeyahatSitesi.Models.Siniflar
+@model List<Iletisim>
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="header-panel"
+    style="background: linear-gradient(to right, #4b6cb7, #182848); color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+    <h2 style="margin:0;"><i class="fas fa-envelope"></i> Iletisim Mesajlari</h2>
+</div>
+
+<div class="w3-card w3-white w3-round w3-padding-large">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Ad Soyad</th>
+                <th>Mail</th>
+                <th>Konu</th>
+                <th>Mesaj</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.ID</td>
+                    <td>@x.AdSoyad</td>
+                    <td>@x.Mail</td>
+                    <td>@x.Konu</td>
+                    <td>@x.Mesaj</td>
+                    <td><a href="/Admin/IletisimSil/@x.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>
+                            Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,37 @@
+@model EasyTrip_TatilSeyahatSitesi.Models.Siniflar.Hakkimizda
+@{
+    ViewBag.Title = "HakkimizdaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="header-panel"
+    style="background: linear-gradient(to right, #4b6cb7, #182848); color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+    <h2 style="margin:0;"><i class="fas fa-edit"></i> Hakk&#305;m&#305;zda Yaz&#305;s&#305;n&#305; G&#252;ncelle</h2>
+</div>
+
+<div class="w3-card w3-white w3-round w3-padding-large">
+    @using (Html.BeginForm("HakkimizdaGuncelle", "Admin", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.FotoUrl, new { @style = "font-weight:bold; color:#333;" })
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-image"></i></span>
+                </div>
+                @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Aciklama, new { @style = "font-weight:bold; color:#333;" })
+            @Html.TextAreaFor(x => x.Aciklama, 10, 1, new { @class = "form-control" })
+        </div>
+        <br />
+
+        <button class="btn btn-success"><i class="fas fa-sync-alt"></i> G&#252;ncelle</button>
+        <a href="/Admin/Hakkimizda/" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Vazge&#231;</a>
+    }
+</div>

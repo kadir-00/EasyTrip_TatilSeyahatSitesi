@@ -1,41 +1,137 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<head>
+    <title>EasyTrip Admin Panel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+        }
+
+        .w3-sidebar {
+            z-index: 3;
+            width: 250px;
+            background-color: #343a40;
+            color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .w3-bar-item {
+            padding: 15px 20px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            border-left: 4px solid transparent;
+        }
+
+        .w3-bar-item:hover {
+            background-color: #495057;
+            border-left: 4px solid #17a2b8;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .w3-bar-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .brand-logo {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            text-align: center;
+            background-color: #212529;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .brand-logo:hover {
+            color: #17a2b8;
+            text-decoration: none;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            transition: margin-left .4s;
+        }
+
+        .header-panel {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title {
+            margin: 0;
+            font-weight: 600;
+            font-size: 28px;
+        }
+
+        @@media (max-width: 992px) {
+            .w3-sidebar {
+                display: none;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
 <body>
 
     <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-        <h3 class="w3-bar-item">Menu</h3>
-        <a href="/Admin/Index/" class="w3-bar-item w3-button">Bloglar</a>
-        <a href="/Admin/YorumListesi/" class="w3-bar-item w3-button">Yorumlar</a>
-        <a href="/Admin/Iletisim/" class="w3-bar-item w3-button">Iletisim Paneli</a>
-        <a href="/Default/Index/" class="w3-bar-item w3-button">Siteye Git!</a>
-        <a href="/GirisYap/LogOut/" class="w3-bar-item w3-button">Cikis Yap!</a>
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" id="mySidebar">
+        <a href="/Admin/Index/" class="brand-logo"><i class="fas fa-plane-departure"></i> EasyTrip</a>
+
+        <div class="w3-container w3-padding-16" style="border-bottom: 1px solid #4f5962; margin-bottom: 10px;">
+            <span style="font-size: 14px; color: #adb5bd;">Hoşgeldin, Admin</span>
+        </div>
+
+        <a href="/Admin/Index/" class="w3-bar-item"><i class="fas fa-file-alt"></i> Bloglar</a>
+        <a href="/Admin/YorumListesi/" class="w3-bar-item"><i class="fas fa-comments"></i> Yorumlar</a>
+        <a href="/Admin/Iletisim/" class="w3-bar-item"><i class="fas fa-envelope"></i> İletişim Paneli</a>
+        <a href="/Admin/Hakkimizda/" class="w3-bar-item"><i class="fas fa-info-circle"></i> Hakkımızda</a>
+
+        <div style="margin-top: 20px; border-top: 1px solid #4f5962; padding-top: 10px;">
+            <a href="/Default/Index/" target="_blank" class="w3-bar-item"><i class="fas fa-external-link-alt"></i>
+                Siteye Git</a>
+            <a href="/GirisYap/LogOut/" class="w3-bar-item"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a>
+        </div>
     </div>
 
     <!-- Page Content -->
-    <div style="margin-left:25%">
+    <div class="main-content">
 
-        <div class="w3-container w3-teal">
-            <h4>Admin Yonetim Paneli</h4>
+        <div class="header-panel">
+            <div class="w3-container">
+                <h2 class="header-title"><i class="fas fa-cogs"></i> Admin Yönetim Paneli</h2>
+            </div>
         </div>
 
-
-        <div class="w3-container">
-            @RenderBody()
+        <div class="w3-container w3-padding-32">
+            <div class="w3-card w3-white w3-round w3-padding-large">
+                @RenderBody()
+            </div>
         </div>
 
     </div>
 
 </body>
-</html>
 
+</html>

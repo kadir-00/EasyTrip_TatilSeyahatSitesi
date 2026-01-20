@@ -33,8 +33,8 @@ namespace EasyTrip_TatilSeyahatSitesi.Controllers
         }
 
         public ActionResult BlogSil(int id)
-        { 
-          var b = c.Blogs.Find(id);
+        {
+            var b = c.Blogs.Find(id);
             c.Blogs.Remove(b);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -88,5 +88,53 @@ namespace EasyTrip_TatilSeyahatSitesi.Controllers
         }
 
 
+        public ActionResult Hakkimizda()
+        {
+            var values = c.Hakkimizdas.ToList();
+            return View(values);
+        }
+
+        [HttpGet]
+        public ActionResult YeniHakkimizda()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniHakkimizda(Hakkimizda h)
+        {
+            c.Hakkimizdas.Add(h);
+            c.SaveChanges();
+            return RedirectToAction("Hakkimizda");
+        }
+
+        public ActionResult HakkimizdaSil(int id)
+        {
+            var h = c.Hakkimizdas.Find(id);
+            c.Hakkimizdas.Remove(h);
+            c.SaveChanges();
+            return RedirectToAction("Hakkimizda");
+        }
+
+        public ActionResult HakkimizdaGetir(int id)
+        {
+            var h = c.Hakkimizdas.Find(id);
+            return View("HakkimizdaGetir", h);
+        }
+
+        public ActionResult HakkimizdaGuncelle(Hakkimizda h)
+        {
+            var hk = c.Hakkimizdas.Find(h.ID);
+            hk.Aciklama = h.Aciklama;
+            hk.FotoUrl = h.FotoUrl;
+            c.SaveChanges();
+            return RedirectToAction("Hakkimizda");
+        }
+
+        public ActionResult Iletisim()
+        {
+            var iletisim = c.Iletisims.ToList();
+            return View(iletisim);
+        }
     }
 }
