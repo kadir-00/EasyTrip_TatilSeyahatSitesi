@@ -1,5 +1,5 @@
 ﻿@using EasyTrip_TatilSeyahatSitesi.Models.Siniflar
-@model List<Blog> 
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -13,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Easy Trip - Tatil & Seyahat Sitesi</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,19 +24,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script src="js/responsiveslides.min.js"></script>
 
     <script>// You can also use "$(window).load(function() {"
-    $(function () {
-      // Slideshow 1
-      $("#slider1").responsiveSlides({
-         auto: true,
-		 nav: true,
-		 speed: 500,
-		 namespace: "callbacks",
-      });
-    });</script>
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });</script>
 </head>
+
 <body>
-    
-     
+
+
     <div class="header-banner">
         <div class="wrap">
             <div class="banner">
@@ -90,8 +92,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                                     @*<li><img src="~/web/images/img1.jpg" alt=""></li>*@
                                     @*<li><img src="~/web/images/img2.jpg" alt=""></li>
-            <li><img src="~/web/images/img3.jpg" alt=""></li>
-            <li><img src="~/web/images/img4.jpg" alt=""></li>*@
+                                <li><img src="~/web/images/img3.jpg" alt=""></li>
+                                <li><img src="~/web/images/img4.jpg" alt=""></li>*@
                                 }
                             </ul>
                         </div>
@@ -107,23 +109,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="wrapper">
                 <div class="con-top">
                     <h3>Tatil Seyahat Bloğuma Hoş Geldiniz!</h3>
-                    <p>Tatil ve seyahat tutkunları için hazırladığımız bloğumuza hoş geldiniz. Dünyanın dört bir yanından gezilecek yerler, seyahat ipuçları, konaklama önerileri ve unutulmaz anılar biriktirmeniz için ihtiyacınız olan her şeyi burada bulabilirsiniz. Keşfetmeye hazır mısınız?</p>
+                    <p>Tatil ve seyahat tutkunları için hazırladığımız bloğumuza hoş geldiniz. Dünyanın dört bir
+                        yanından gezilecek yerler, seyahat ipuçları, konaklama önerileri ve unutulmaz anılar
+                        biriktirmeniz için ihtiyacınız olan her şeyi burada bulabilirsiniz. Keşfetmeye hazır mısınız?
+                    </p>
                 </div>
 
-                @Html.Action("Partial1","Default");
+                @Html.Action("Partial1", "Default")
 
                 <div class="grids">
                     <div class="box1">
-                        @Html.Action("Partial3","Default");
-                        @Html.Action("Partial4","Default");
+                        @Html.Action("Partial3", "Default")
+                        @Html.Action("Partial4", "Default")
                         <div class="clear"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
-
-

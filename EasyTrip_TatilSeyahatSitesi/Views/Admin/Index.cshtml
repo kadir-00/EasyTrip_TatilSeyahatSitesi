@@ -5,27 +5,37 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Blog Listesi</h2>
-<br />
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Baslik</th>
-        <th>Sil</th>
-        <th>Guncelle</th>
-    </tr>
-    @foreach (var x in Model)
-    {
+<div class="header-panel"
+    style="background: linear-gradient(to right, #4b6cb7, #182848); color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+    <h2 style="margin:0;"><i class="fas fa-list"></i> Blog Listesi</h2>
+</div>
 
-
-    <tr>
-        <td>@x.ID</td>
-        <td>@x.Baslik</td>
-        <td> <a href="/Admin/BlogSil/@x.ID" class="btn btn-outline-danger"> Sil</a></td>
-        <td> <a href="/Admin/BlogGetir/@x.ID" class="btn btn-outline-success">Guncelle </a> </td>
-        <td> <a href="#" class="btn btn-outline-info">Detaylar </a> </td>
-    </tr>
-    }
-</table>
-<a href="/Admin/YeniBlog/" class="btn btn-outline-warning">Yeni Blog Ekle </a>
-
+<div class="w3-card w3-white w3-round w3-padding-large">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Baslik</th>
+                <th>Sil</th>
+                <th>Guncelle</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.ID</td>
+                    <td>@x.Baslik</td>
+                    <td><a href="/Admin/BlogSil/@x.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Sil</a>
+                    </td>
+                    <td><a href="/Admin/BlogGetir/@x.ID" class="btn btn-success btn-sm"><i class="fas fa-edit"></i>
+                            Guncelle</a></td>
+                    <td><a href="#" class="btn btn-info btn-sm"><i class="fas fa-eye"></i> Detaylar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Admin/YeniBlog/" class="btn btn-primary"><i class="fas fa-plus"></i> Yeni Blog Ekle</a>
+</div>

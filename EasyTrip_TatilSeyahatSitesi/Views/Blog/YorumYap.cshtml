@@ -1,12 +1,12 @@
-﻿
-<div class="content-form">
+﻿<div class="content-form">
     <h3>Yorum Ekleyin</h3>
-    
+
     <form method="post">
-        <input type="text" placeholder="ID" name="Blogid" value="@ViewBag.deger" required />
-        <input type="text" placeholder="Mail Adresi" name="Mail" required />
-        <input type="text" placeholder="Telefon Numarasi" name="Yorum" required />
-        <textarea placeholder="Mesajiniz"></textarea>
-        <input type="submit" value="GONDER" />
+        <input type="hidden" name="Blogid" value="@ViewBag.deger" />
+        <input type="text" name="KullaniciAdi" placeholder="Adınız Soyadınız" required />
+        <textarea name="Yorum" placeholder="Yorumunuzu buraya yazın..." required
+            style="width:100%; height:100px; padding:10px; margin-top:10px;"></textarea>
+        <br />
+        <input type="submit" value="Yorum Yap" />
     </form>
 </div>

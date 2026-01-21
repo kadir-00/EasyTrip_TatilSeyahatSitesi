@@ -4,23 +4,49 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Yorum Guncelleme Sayfasi</h2>
-<br />
-@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
-{
-    @Html.LabelFor(x => x.ID)
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
-    <br />
-    @Html.LabelFor(x => x.KullaniciAdi)
-    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Mail)
-    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Yorum)
-    @Html.TextAreaFor(x => x.Yorum,15,1, new { @class = "form-control" })
-   
-    <br />
-    <button class="btn btn-outline-success">Yorum Guncelle</button>
-}
+<div class="header-panel"
+    style="background: linear-gradient(to right, #4b6cb7, #182848); color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+    <h2 style="margin:0;"><i class="fas fa-edit"></i> Yorum Guncelleme Sayfasi</h2>
+</div>
 
+<div class="w3-card w3-white w3-round w3-padding-large">
+    @using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(x => x.ID, new { @style = "font-weight:bold; color:#333;" })
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.KullaniciAdi, new { @style = "font-weight:bold; color:#333;" })
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Mail, new { @style = "font-weight:bold; color:#333;" })
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Yorum, new { @style = "font-weight:bold; color:#333;" })
+            @Html.TextAreaFor(x => x.Yorum, 10, 1, new { @class = "form-control" })
+        </div>
+        <br />
+
+        <button class="btn btn-success"><i class="fas fa-sync-alt"></i> Yorum Guncelle</button>
+        <a href="/Admin/YorumListesi/" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Vazgec</a>
+    }
+</div>

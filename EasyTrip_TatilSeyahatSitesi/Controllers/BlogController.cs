@@ -11,7 +11,7 @@ namespace EasyTrip_TatilSeyahatSitesi.Controllers
     {
         Context c = new Context();
         BlogYorum by = new BlogYorum();
-        
+
         public ActionResult Index()
         {
             //var bloglar = c.Blogs.ToList(); 
@@ -20,7 +20,7 @@ namespace EasyTrip_TatilSeyahatSitesi.Controllers
             return View(by);
         }
 
-        
+
         public ActionResult BlogDetay(int id)
         {
             //var blogbul = c.Blogs.Where(x=>x.ID==id).ToList();
@@ -42,6 +42,17 @@ namespace EasyTrip_TatilSeyahatSitesi.Controllers
             c.Yorumlars.Add(y);
             c.SaveChanges();
             return PartialView();
+        }
+        public PartialViewResult PartialRecentPosts()
+        {
+            var values = c.Blogs.OrderByDescending(x => x.ID).Take(4).ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult PartialRecentComments()
+        {
+            var values = c.Yorumlars.OrderByDescending(x => x.ID).Take(3).ToList();
+            return PartialView(values);
         }
     }
 }

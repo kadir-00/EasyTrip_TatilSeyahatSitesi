@@ -4,25 +4,60 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Blog Guncelleme Sayfasi</h2>
-<br />
-@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
-{
-    @Html.LabelFor(x => x.ID)
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control",@readonly="readonly"})
-    <br />
-    @Html.LabelFor(x => x.Baslik)
-    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Tarih)
-    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.BlogImage)
-    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(x => x.Aciklama)
-    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
-    <br />
-    <button class="btn btn-outline-success">Blog Guncelle</button>
-}
+<div class="header-panel"
+    style="background: linear-gradient(to right, #4b6cb7, #182848); color: white; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+    <h2 style="margin:0;"><i class="fas fa-edit"></i> Blog Guncelleme Sayfasi</h2>
+</div>
 
+<div class="w3-card w3-white w3-round w3-padding-large">
+    @using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(x => x.ID, new { @style = "font-weight:bold; color:#333;" })
+            @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Baslik, new { @style = "font-weight:bold; color:#333;" })
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-heading"></i></span>
+                </div>
+                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Tarih, new { @style = "font-weight:bold; color:#333;" })
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                </div>
+                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.BlogImage, new { @style = "font-weight:bold; color:#333;" })
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-image"></i></span>
+                </div>
+                @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Aciklama, new { @style = "font-weight:bold; color:#333;" })
+            @Html.TextAreaFor(x => x.Aciklama, 10, 1, new { @class = "form-control" })
+        </div>
+        <br />
+
+        <button class="btn btn-success"><i class="fas fa-sync-alt"></i> Blog Guncelle</button>
+        <a href="/Admin/Index/" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Vazgec</a>
+    }
+</div>

@@ -1,0 +1,26 @@
+@using EasyTrip_TatilSeyahatSitesi.Models.Siniflar
+@model List<Yorumlar>
+
+<div class="comments">
+    <h3>Son Yorumlar</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li style="border-bottom: 1px solid #eee; margin-bottom: 15px; padding-bottom: 5px;">
+                <div style="font-weight: bold; font-size: 14px; color: #333;">@item.KullaniciAdi</div>
+                <div style="font-size: 13px; color: #888; font-style: italic;">
+                    @if (!string.IsNullOrEmpty(item.Yorum) && item.Yorum.Length > 50)
+                    {
+                        @item.Yorum.Substring(0, 50)
+
+                        <text>...</text>
+                    }
+                    else if (!string.IsNullOrEmpty(item.Yorum))
+                    {
+                        @item.Yorum
+                    }
+                </div>
+            </li>
+        }
+    </ul>
+</div>
