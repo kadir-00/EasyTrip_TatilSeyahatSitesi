@@ -14,7 +14,7 @@
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>ID</th>
+                <th>#</th>
                 <th>Ad Soyad</th>
                 <th>Mail</th>
                 <th>Konu</th>
@@ -23,10 +23,16 @@
             </tr>
         </thead>
         <tbody>
+            @{
+                int sayac = 0;
+            }
             @foreach (var x in Model)
             {
                 <tr>
-                    <td>@x.ID</td>
+                    @{
+                        sayac++;
+                    }
+                    <td>@sayac</td>
                     <td>@x.AdSoyad</td>
                     <td>@x.Mail</td>
                     <td>@x.Konu</td>

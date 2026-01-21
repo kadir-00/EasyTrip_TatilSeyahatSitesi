@@ -14,18 +14,24 @@
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
             <tr>
-                <th style="width: 5%;">ID</th>
+                <th style="width: 5%;">#</th>
                 <th style="width: 20%;">Fotograf URL</th>
-                <th style="width: 55%;">Aciklama (Kisaltilmis)</th>
+                <th style="width: 55%;">Aciklama</th>
                 <th style="width: 10%;">Sil</th>
                 <th style="width: 10%;">Guncelle</th>
             </tr>
         </thead>
         <tbody>
+            @{
+                int sayac = 0;
+            }
             @foreach (var x in Model)
             {
                 <tr>
-                    <td>@x.ID</td>
+                    @{
+                        sayac++;
+                    }
+                    <td>@sayac</td>
                     <td>@(x.FotoUrl != null && x.FotoUrl.Length > 30 ? x.FotoUrl.Substring(0, 30) + "..." : x.FotoUrl)</td>
                     <td>@(x.Aciklama != null && x.Aciklama.Length > 50 ? x.Aciklama.Substring(0, 50) + "..." : x.Aciklama)
                     </td>

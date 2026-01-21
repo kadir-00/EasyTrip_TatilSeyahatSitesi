@@ -1,12 +1,15 @@
 ﻿<div class="content-form">
     <h3>Yorum Ekleyin</h3>
 
-    <form method="post">
+    @using (Html.BeginForm("YorumYap", "Blog", FormMethod.Post))
+    {
         <input type="hidden" name="Blogid" value="@ViewBag.deger" />
-        <input type="text" name="KullaniciAdi" placeholder="Adınız Soyadınız" required />
+        <input type="text" name="KullaniciAdi" placeholder="Adınız Soyadınız" required
+            style="width:100%; padding:10px; margin-bottom:10px;" />
         <textarea name="Yorum" placeholder="Yorumunuzu buraya yazın..." required
             style="width:100%; height:100px; padding:10px; margin-top:10px;"></textarea>
         <br />
-        <input type="submit" value="Yorum Yap" />
-    </form>
+        <input type="submit" value="Yorum Yap"
+            style="background: #a2365a; color: white; border: none; padding: 10px 20px; cursor: pointer;" />
+    }
 </div>

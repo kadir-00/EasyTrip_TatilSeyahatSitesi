@@ -14,7 +14,7 @@
     <table class="table table-bordered table-striped table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>ID</th>
+                <th>#</th>
                 <th>Baslik</th>
                 <th>Sil</th>
                 <th>Guncelle</th>
@@ -22,10 +22,16 @@
             </tr>
         </thead>
         <tbody>
+            @{
+                int sayac = 0;
+            }
             @foreach (var x in Model)
             {
                 <tr>
-                    <td>@x.ID</td>
+                    @{
+                        sayac++;
+                    }
+                    <td>@sayac</td>
                     <td>@x.Baslik</td>
                     <td><a href="/Admin/BlogSil/@x.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Sil</a>
                     </td>

@@ -54,21 +54,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             @x.Aciklama </p>
                     }
                 </div>
-                @foreach (var y in Model.Deger2)
+                @if (Model.Deger2.Count() > 0)
                 {
-
-
-                    <ul class="comment-list">
-                        <h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a>
-                        </h5>
-                        <li>
-                            <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                            <div class="desc">
-                                <p><strong>@y.KullaniciAdi:</strong> @y.Yorum</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                    </ul>
+                    <div class="comments-area" style="margin-top: 40px;">
+                        <h3 style="margin-bottom: 20px; color: #a2365a;">Yorumlar (@Model.Deger2.Count())</h3>
+                        <ul class="comment-list" style="list-style: none; padding: 0;">
+                            @foreach (var y in Model.Deger2)
+                            {
+                                <li style="margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #eee;">
+                                    <div style="display: flex;">
+                                        <div style="margin-right: 15px;">
+                                            <img src="~/web2/images/avatar.png" class="img-responsive" alt=""
+                                                style="width: 60px; height: 60px; border-radius: 50%;">
+                                        </div>
+                                        <div>
+                                            <h5 style="margin: 0 0 5px 0; font-weight: bold; color: #333;">@y.KullaniciAdi</h5>
+                                            <p style="margin: 0; color: #666; line-height: 1.6;">@y.Yorum</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info" style="margin-top: 30px;">
+                        Henüz yorum yapılmamış. İlk yorumu sen yap!
+                    </div>
                 }
                 @Html.Action("YorumYap", "Blog", new { id = Model.Deger1.FirstOrDefault().ID })
             </div>

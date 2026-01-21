@@ -37,11 +37,11 @@ namespace EasyTrip_TatilSeyahatSitesi.Controllers
         }
 
         [HttpPost]
-        public PartialViewResult YorumYap(Yorumlar y)
+        public ActionResult YorumYap(Yorumlar y)
         {
             c.Yorumlars.Add(y);
             c.SaveChanges();
-            return PartialView();
+            return RedirectToAction("BlogDetay", "Blog", new { id = y.Blogid });
         }
         public PartialViewResult PartialRecentPosts()
         {
